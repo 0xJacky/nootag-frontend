@@ -9,16 +9,12 @@ const router = new Router({
         {
             path: '/',
             component: () => import('./layouts/BaseLayout'),
+            redirect: '/landing',
             children: [
                 {
-                    path: '/home',
-                    // component: Home,
+                    path: '/landing',
+                    component: () => import('./views/other/Landing'),
                     name: '首页'
-                },
-                {
-                    path: '/topic/:id',
-                    component: () => import('./views/topic/Topic'),
-                    name: '分类'
                 },
                 {
                     path: '/post/:search',
@@ -26,25 +22,10 @@ const router = new Router({
                     name: '文章'
                 },
                 {
-                    path: '/apple',
-                    component: () => import('./views/firmware/Main'),
-                    name: '固件下载中心'
-                },
-                {
-                    path: '/donate',
-                    component: () => import('./views/page/Donate'),
-                    name: '捐助'
-                },
-                {
                     path: '/about',
                     component: () => import('./views/page/About'),
                     name: '关于'
                 },
-                {
-                    path: '/install/:url',
-                    component: () => import('./views/Install'),
-                    name: '安装描述文件'
-                }
             ]
         },
         {

@@ -1,25 +1,20 @@
 <template>
-    <a-card>
-        <std-table
-            :columns="columns"
-            :api="api"
-            data_key="users"
-            pagination_method="a"
-            @clickEdit="id => {
-          $router.push('/user/'+id+'/edit')
-       }"
-        />
-    </a-card>
+    <std-curd
+        :columns="columns"
+        :api="api"
+        data_key="users"
+        pagination_method="a"
+    />
 </template>
 
 <script>
-    import StdTable from '~/manage/components/StdDataDisplay/StdTable'
+    import StdCurd from '~/manage/components/StdDataDisplay/StdCurd'
     import user_columns from './user_colums'
 
     export default {
         name: 'ManageUser',
         components: {
-            StdTable
+            StdCurd
         },
         data() {
             return {

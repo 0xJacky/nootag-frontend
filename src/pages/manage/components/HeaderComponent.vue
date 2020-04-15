@@ -4,25 +4,28 @@
             <a-icon type="menu-unfold" @click="$emit('clickUnFold')"/>
         </div>
         <div class="user-wrapper">
-            <a href="/index.html">
+            <a href="/" target="_blank">
                 <a-icon type="home"/>
+                首页
             </a>
-            <notice-icon/>
-            <user-avatar-popover/>
+            <a @click="logout">
+                <a-icon type="logout"/>
+                注销
+            </a>
         </div>
     </div>
 </template>
 
 <script>
-    import UserAvatarPopover from '@/components/UserAvatarPopover'
-    import NoticeIcon from '@/components/NoticeIcon/NoticeIcon'
-
     export default {
         name: 'HeaderComponent',
-        components: {
-            UserAvatarPopover,
-            NoticeIcon
-        },
+        methods: {
+            logout() {
+                this.$api.authorization.logout().then(() => {
+                    window.location.replace('/index.html')
+                })
+            }
+        }
     }
 </script>
 

@@ -58,7 +58,7 @@
             },
             visible(sidebars) {
                 return sidebars.filter(c => {
-                    return (!c.hidden) && this.$store.state.user.power >= c.meta.power
+                    return !c.hidden
                 })
             }
         }

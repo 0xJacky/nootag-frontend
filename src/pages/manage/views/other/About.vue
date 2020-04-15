@@ -1,10 +1,8 @@
 <template>
     <a-card>
         <h2>
-            Nootag 无派科技管理系统<br>
+            nootag 无派科技管理系统<br>
         </h2>
-        <p>Pi Server</p>
-        <p>本系统为尝鲜派服务器设计</p>
         <p>Version: {{ version }}-{{ build_id }}</p>
         <p>Designer: <a href="https://jackyu.cn/" target="_blank">@0xJacky</a></p>
         <h3>技术栈</h3>

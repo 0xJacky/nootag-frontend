@@ -6,6 +6,10 @@ const post = {
 
     get(id) {
         return http.get(baseUrl + '/' + id)
+    },
+
+    get_list(page = 1) {
+        return http.get(baseUrl + 's', {params: {page: page}})
     }
 
 }

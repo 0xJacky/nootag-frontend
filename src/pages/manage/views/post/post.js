@@ -36,16 +36,6 @@ const post_columns = [{
   },
   pithy: true
 }, {
-  title: '话题',
-  dataIndex: 'topic',
-  scopedSlots: {customRender: 'topic'},
-  search: {
-    type: 'input',
-    labelCol: 6,
-    wrapperCol: 16
-  },
-  pithy: true
-}, {
   title: '状态',
   dataIndex: 'post_status',
   scopedSlots: {customRender: 'post_status'},
@@ -68,36 +58,6 @@ const post_columns = [{
   dataIndex: 'visits',
   scopedSlots: {customRender: 'visits'},
   sorter: true
-}, {
-  title: '置顶',
-  dataIndex: 'push',
-  scopedSlots: {customRender: 'push'},
-  sorter: true,
-  mask: {
-    0: '否',
-    1: '是'
-  }
-}, {
-  title: '评论数',
-  dataIndex: 'comments',
-  scopedSlots: {customRender: 'comments'},
-  sorter: true
-}, {
-  title: '允许评论',
-  dataIndex: 'allow_comment',
-  scopedSlots: {customRender: 'allow_comment'},
-  badge: true,
-  mask: {
-    0: '禁止',
-    1: '允许'
-  },
-  search: {
-    type: 'checkbox',
-    condition: 'allow_comment',
-    default: true,
-    labelCol: 20,
-    wrapperCol: 2
-  }
 }, {
   title: '操作',
   dataIndex: 'action',

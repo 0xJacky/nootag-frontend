@@ -8,7 +8,7 @@
         data_key="posts"
         pagination_method="a"
         @clickEdit="id => {
-          $router.push('/post/'+id+'/edit')
+          $router.push('/post/'+id)
         }"
         :soft_delete="true"
       />

@@ -1,5 +1,5 @@
 <template>
-    <a-locale-provider :locale="zh_CN">
+    <a-config-provider :locale="zh_CN">
         <a-layout style="min-height: 100%;">
             <a-drawer
                 v-if="clientWidth<512"
@@ -39,7 +39,7 @@
             </a-layout>
 
         </a-layout>
-    </a-locale-provider>
+    </a-config-provider>
 </template>
 
 <script>

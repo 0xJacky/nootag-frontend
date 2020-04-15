@@ -1,6 +1,6 @@
 <template>
     <div class="footer center">
-        Copyright © 2017 - 2020 0xJacky
+        © 2020 nooTag Tech · 无派科技（深圳）有限公司 · 粤ICP备20024314号-1
     </div>
 </template>
 

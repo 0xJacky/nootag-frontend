@@ -37,17 +37,12 @@
     import StdDataEntry from '~/manage/components/StdDataEntry/StdDataEntry'
     import category_columns from '~/manage/views/post/category_columns'
     import category from '~/manage/api/category'
-    import topic from '~/manage/api/topic'
-    import topic_columns from '~/manage/views/topic/topic_columns'
     import post from '~/manage/api/post'
     import StdEditor from '~/manage/components/StdEditor/StdEditor'
 
     const readonly = {
         author: '作者',
-        comments_amount: '评论数',
-        visits: '浏览量',
-        likes: '点赞',
-        dislikes: '点踩'
+        visits: '浏览量'
     }
 
     const modify = [{
@@ -63,16 +58,6 @@
             type: 'selector',
             api: category,
             columns: category_columns,
-            data_key: 'data',
-            pagination_method: 'b'
-        }
-    }, {
-        dataIndex: 'topic_id',
-        title: '话题',
-        edit: {
-            type: 'selector',
-            api: topic,
-            columns: topic_columns,
             data_key: 'data',
             pagination_method: 'b'
         }
@@ -93,36 +78,6 @@
             0: '草稿',
             1: '审核',
             2: '正常'
-        }
-    }, {
-        dataIndex: 'post_type',
-        title: '文章类型',
-        edit: {
-            type: 'select'
-        },
-        mask: {
-            post: '官方文章',
-            contribution: '用户投稿'
-        }
-    }, {
-        dataIndex: 'allow_comment',
-        title: '评论状态',
-        edit: {
-            type: 'select'
-        },
-        mask: {
-            0: '禁止',
-            1: '允许'
-        }
-    }, {
-        dataIndex: 'push',
-        title: '推送',
-        edit: {
-            type: 'select'
-        },
-        mask: {
-            0: '否',
-            1: '是'
         }
     }]
 

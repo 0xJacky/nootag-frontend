@@ -2,12 +2,8 @@ import http from '@/lib/http'
 
 const surface = {
 
-    donate(params) {
-        return http.get('surface/donate', {params: params})
-    },
-
-    about() {
-        return http.get('surface/about')
+    landing() {
+        return http.get('/surface/landing')
     }
 
 }

@@ -1,3 +1,5 @@
+<script src="../../../surface/router.js"></script>
+<script src="../../../surface/api/post.js"></script>
 <template>
     <a-row
         class="container center"
@@ -41,7 +43,7 @@
 <script>
     import Vue from 'vue'
     import {VueReCaptcha} from 'vue-recaptcha-v3'
-    import StdFormCardContent from '~/user/components/StdFormCard/StdFormCardContent'
+    import StdFormCardContent from '@/components/StdFormCard/StdFormCardContent'
     import VueParticles from 'vue-particles'
 
     Vue.use(VueReCaptcha, {
@@ -108,7 +110,7 @@
         },
         created() {
             if (this.$store.getters.isLogin) {
-                this.$router.push('/')
+                window.location.href = '/manage.html'
             }
             this.form = this.$form.createForm(this)
         },
@@ -117,7 +119,7 @@
                 this.$api.authorization.login(data.email, data.password, data.token).then(() => {
                     this.$api.user.info().then(() => {
                         this.$message.success('登录成功', 1).then(() => {
-                            const path = this.$route.query.redirect ? this.$route.query.redirect : '/user.html'
+                            const path = '/manage.html#' + (this.$route.query.redirect ? this.$route.query.redirect : '')
                             window.location.href = path
                         })
                     })

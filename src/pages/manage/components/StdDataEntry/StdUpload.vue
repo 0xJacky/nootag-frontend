@@ -204,6 +204,7 @@
                     this.$recaptcha('upload').then((token) => {
                         this.api(this.id, formData, token).then(r => {
                             this.$emit('uploaded', r.url)
+                            this.$emit('changeFileUrl', r.url)
                             this.uploading = false
                             this.$message.success('上传成功')
                         })

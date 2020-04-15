@@ -19,42 +19,13 @@ export const routes = [
                 component: () => import('./views/dashboard/Dashboard'),
                 name: 'DashBoard',
                 icon: 'home',
-                meta: {hiddenHeaderContent: true, power: 2}
+                meta: {hiddenHeaderContent: true}
             },
             {
                 path: 'user',
                 name: '用户管理',
                 icon: 'user',
-                redirect: '/user/list',
-                component: BaseRouterView,
-                meta: {power: 6},
-                children: [
-                    {
-                        path: 'add',
-                        component: () => import('./views/user/Edit'),
-                        name: '添加用户',
-                        meta: {power: 8}
-                    },
-                    {
-                        path: 'list',
-                        component: () => import('./views/user/List'),
-                        name: '用户列表',
-                        meta: {power: 6}
-                    }, {
-                        path: ':id',
-                        component: () => import('./views/user/Edit'),
-                        name: '用户编辑',
-                        hidden: true,
-                        meta: {power: 6}
-                    }
-                ]
-            },
-            {
-                path: 'user_group',
-                name: '用户组管理',
-                icon: 'team',
-                component: () => import('./views/user/Group'),
-                meta: {power: 10}
+                component: () => import('./views/user/List')
             },
             {
                 path: 'post',
@@ -62,54 +33,41 @@ export const routes = [
                 name: '文章管理',
                 icon: 'form',
                 redirect: '/post/list',
-                meta: {power: 6},
                 children: [
                     {
                         path: 'add',
                         component: () => import('./views/post/Edit'),
-                        name: '写文章',
-                        meta: {power: 6}
+                        name: '写文章'
+                    },
+                    {
+                        path: 'list',
+                        component: () => import('./views/post/ListPost'),
+                        name: '所有文章'
+                    },
+                    {
+                        path: 'category',
+                        component: () => import('./views/post/Category'),
+                        name: '文章分类'
                     },
                     {
                         path: ':id',
                         component: () => import('./views/post/Edit'),
                         name: '编辑文章',
-                        hidden: true,
-                        meta: {power: 6}
-                    },
-                    {
-                        path: 'list',
-                        component: () => import('./views/post/ListPost'),
-                        name: '所有文章',
-                        meta: {power: 6}
-                    },
-                    {
-                        path: 'contribution',
-                        component: () => import('./views/post/ListContribution'),
-                        name: '所有稿件',
-                        meta: {power: 6}
-                    },
-                    {
-                        path: 'category',
-                        component: () => import('./views/post/Category'),
-                        name: '文章分类',
-                        meta: {power: 6}
-                    },
+                        hidden: true
+                    }
                 ]
             },
             {
                 path: 'media',
                 name: '媒体管理',
                 component: () => import('./views/media/Gallery'),
-                icon: 'cloud',
-                meta: {power: 6}
+                icon: 'cloud'
             },
             {
                 path: 'about',
                 component: () => import('./views/other/About'),
                 name: '关于',
-                icon: 'info-circle',
-                meta: {power: 2}
+                icon: 'info-circle'
             }
         ]
     },
@@ -142,7 +100,7 @@ export const routes = [
 const router = new Router({routes})
 
 router.beforeEach((to, from, next) => {
-    document.title = 'Nootag 无派科技 | ' + to.name
+    document.title = 'nootag 无派科技 | ' + to.name
 
     if (process.env.NODE_ENV === 'production') {
         axios.get('/version.json?' + Date.now()).then(r => {

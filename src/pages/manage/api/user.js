@@ -10,7 +10,7 @@ const user = {
         return user
     },
 
-    user_info(id) {
+    get(id) {
         return http.get('/admin/user/' + id)
     },
 
