@@ -21,15 +21,15 @@
             </a-list>
             <std-pagination :pagination="pagination" @changePage="page => {getMoreNews(page)}"/>
         </a-drawer>
-        <a-row class="landing">
-            <a-col :xs="24">
-                <p>nooTag</p>
-                <h2>无派科技</h2>
-            </a-col>
-            <a-col :xs="24">
-                <h1>让互联网属于每个人</h1>
-            </a-col>
-        </a-row>
+        <a-col class="landing">
+            <div class="logo_banner">
+                <p style="height: 30px; font-size: 25px;">nooTag</p>
+                <p style="font-size: 25px;">无派科技</p>
+            </div>
+            <div class="logo_desc" style="margin-bottom: 130px">
+                <p style="font-size: 15px; margin-top: 20px">让互联网属于每个人</p>
+            </div>
+        </a-col>
         <a-divider/>
         <a-row class="center news">
             <a-col :xs="22" :sm="18">
@@ -37,7 +37,6 @@
                     <span class="left">最新动态</span>
                     <a class="right" @click="getMoreNews">更多新闻</a>
                 </div>
-
                     <a-col :xs="24" :sm="12">
                         <span style="cursor: pointer"
                               @click="$router.push('/post/'+(headline.post_name?headline.post_name:headline.id)).then()">
@@ -71,31 +70,32 @@
             <a-col :xs="22" :sm="18">
                 <h2>我们的想法</h2>
                 <a-card class="idea">
-                    <div class="img">
-                        <img :src="heart"/>
-                    </div>
-                    <div class="description">
-                        <p>愿景：让互联网属于每一个人。</p>
-                        <p>使命：以打造受人尊敬、直抵人心的产品为基本，致力于推动、打造去中心化的互联网。</p>
-                        <p>价值观：迎接未来、发掘本质、坚持本心、坦诚相待、彼此信任。</p>
-                    </div>
-
+                    <a-row type="flex" justify="center">
+                        <a-col>
+                            <img :src="heart" style="float: left; height: 130px; padding: 0 50px 0 50px">
+                        </a-col>
+                        <a-col style="line-height: 30px;">
+                            <div style="text-align: left; -webkit-transform: translateY(25%);">
+                                <p>愿景：让互联网属于每个人。</p>
+                                <p>使命：以打造受人尊敬、直抵人心的产品为基本，致力于推动、打造去中心化的互联网。</p>
+                                <p>价值观：迎接未来、发掘本质、坚持本心、坦诚平等、彼此信任。</p>
+                            </div>
+                        </a-col>
+                    </a-row>
                 </a-card>
             </a-col>
         </a-row>
-        <a-row class="products center">
-            <a-col :xs="22" :sm="18">
-                <h2>无派科技出品</h2>
-                <a-row class="products-card">
-                    <a-col :xs="24" :sm="12" v-for="product in products" :key="product.name">
-                        <product-card :card="product"/>
-                    </a-col>
-                </a-row>
-            </a-col>
-        </a-row>
-        <a-row class="center">
+        <div class="product_body">
+            <h2 style="text-align: center; padding: 30px 0 50px 0">无派科技出品</h2>
+            <a-row :gutter="[16,8]" type="flex" justify="center">
+                <a-col v-for="product in products" :key="product.name">
+                    <product-card :card="product"/>
+                </a-col>
+            </a-row>
+        </div>
+        <a-row class="center" style="padding-top: 100px;">
             <a-col :xs="23" :sm="18" class="contact-us">
-                <h2>联系我们 hello@nooTag.tech</h2>
+                <h1>联系我们：hello@nooTag.tech</h1>
             </a-col>
         </a-row>
     </div>
@@ -106,8 +106,8 @@
 
     const products = [{
         icon: require('@/assets/img/logo.png'),
-        name: '尝鲜派',
-        description: '去中心化的软件众测社区',
+        name: 'iBeta 尝鲜派',
+        description: '累计服务 1000W+ 用户的 iOS Beta 尝鲜社区',
         url: 'https://ibeta.me',
         appType: 'website',
         multi: 'iBeta 尝鲜派是一个属于数千万尝鲜派的聚集地。\n' +
@@ -117,8 +117,8 @@
                 '并将持续致力于为所有尝鲜派们打造一个更加优质、完善的尝鲜环境和服务。'
     }, {
         icon: require('@/assets/img/pasty_icon.png'),
-        name: '啪唧相机',
-        description: '用贴纸定义你的照片',
+        name: 'Pasty 啪唧相机',
+        description: '累积服务 100W+ 用户的特色贴纸相机',
         url: '#',
         appType: 'app',
         multi: 'Pasty 水印相机是一个通过添加照片水印的方式表达你对所爱品牌认同的微信小程序。\n' +
@@ -278,15 +278,21 @@
 
         .description {
             p {
+                line-height: 20px;
                 padding: 3px 0;
             }
         }
+        padding: 20px 0 20px 0;
     }
 
-    .products {
-        padding: 35px 0;
-        background-color: rgba(142, 142, 144, 0.2);
-        
+    .product_body {
+        background-color: #EAEAEA;
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin: 0 -12.5% 0 -12.5%;
+
         .products-card {
             .ant-col {
                 padding: 30px 20px;
@@ -299,7 +305,7 @@
         text-align: center;
 
         h2 {
-            font-size: 40px;
+            font-size: 30px;
             font-weight: 100;
             padding: 100px 0 0 0;
         }

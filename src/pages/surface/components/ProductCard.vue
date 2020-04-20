@@ -1,23 +1,26 @@
 <template>
     <div class="product-card">
-        <a-card :hoverable="true">
+        <a-card :bordered="false" :hoverable="true">
             <div class="card-content">
                 <div class="icon">
                     <img :src="card.icon"/>
                 </div>
                 <div class="info">
-                    <h2>{{ card.name }}</h2>
-                    <p>{{ card.description }}</p>
+                    <p style="font-size: 15px; font-weight: bold; padding-bottom: 15px; padding-top: 10px;">{{ card.name }}</p>
+                    <p style="color: #8e8e90">{{ card.description }}</p>
                 </div>
                 <div class="action">
-                    <span @click="visible=true"><a-icon type="compass" /></span>
-                    <span v-if="card.appType==='website'"><a :href="card.url"><a-icon type="link" /></a></span>
-                    <span v-else-if="card.appType==='app'"><a-icon type="wechat" /></span>
+                    <span v-if="card.appType==='website'"><a :href="card.url"><a-icon type="global" /></a></span>
+                    <span @click="try_visible=true" v-else-if="card.appType==='app'"><a-icon type="wechat"/></span>
+                    <span @click="visible=true"><a-icon type="info-circle"/></span>
                 </div>
             </div>
         </a-card>
-        <a-modal :title="'关于'+card.name" v-model="visible" @ok="handleOk" :footer="false" :centered="true">
+        <a-modal :title="'关于 '+card.name" v-model="visible" @ok="handleOk" :footer="false" :centered="true">
             <p>{{ card.multi }}</p>
+        </a-modal>
+        <a-modal :title="即刻体验" v-model="try_visible" @ok="try_handleOk" :footer="false" :centered="true">
+            <img src="@/assets/img/try_pasty.jpg" style="width: 100%;"/>
         </a-modal>
     </div>
 </template>
@@ -30,11 +33,15 @@
         },
         data() {
             return {
-                visible: false
+                visible: false,
+                try_visible: false,
             }
         },
         methods: {
             handleOk() {
+                this.visible = false
+            },
+            try_handleOk() {
                 this.visible = false
             }
         }
@@ -46,6 +53,7 @@
         .ant-card {
             max-width: 360px;
             margin: 0 auto;
+            width: 250px;
         }
     }
     .card-content {
@@ -82,6 +90,7 @@
 
         .action {
             text-align: center;
+            padding-top: 15px;
             span {
                 margin: 5px 10px;
             }

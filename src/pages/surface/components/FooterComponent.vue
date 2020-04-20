@@ -12,6 +12,7 @@
 
 <style scoped>
     .footer {
-
+        color: #9B9B9B;
+        padding: 30px 0 30px 0;
     }
 </style>
