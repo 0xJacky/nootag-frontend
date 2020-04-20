@@ -7,7 +7,7 @@
 # ./ossutil cp -f ./404.html oss://ibeta-frontend/
 
 echo "正在上传项目资源文件"
-scp -r dist/* root@uozi:/home/wwwroot/alpha.ibeta.me
+scp -r dist/* root@uozi:/home/wwwroot/nootag.tech
 
 echo "正在上传 404 页面"
-scp -r 404.html root@uozi:/home/wwwroot/alpha.ibeta.me
+scp -r 404.html root@uozi:/home/wwwroot/nootag.tech

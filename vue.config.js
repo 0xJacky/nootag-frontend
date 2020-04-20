@@ -66,8 +66,5 @@ module.exports = {
 
     chainWebpack: (config) => {
         config.resolve.alias.set('~', resolve('src/pages'))
-        const svgRule = config.module.rule('svg');
-        svgRule.uses.clear();
-        svgRule.use('vue-svg-loader').loader('vue-svg-loader');
     }
 }
