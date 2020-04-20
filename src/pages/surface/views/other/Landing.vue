@@ -287,11 +287,9 @@
 
     .product_body {
         background-color: #EAEAEA;
-        padding-left: 12.5%;
-        padding-right: 12.5%;
         padding-top: 50px;
         padding-bottom: 50px;
-        margin: 0 -12.5% 0 -12.5%;
+        width: 100%;
 
         .products-card {
             .ant-col {
