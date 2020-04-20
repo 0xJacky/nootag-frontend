@@ -2,16 +2,16 @@
 <script src="../../../surface/api/post.js"></script>
 <template>
     <a-row
-        class="container center"
-        :align="'middle'"
-        :type="'flex'"
+            class="container center"
+            :align="'middle'"
+            :type="'flex'"
     >
         <a-col
-            :xs="0"
-            :sm="12"
-            :md="12"
-            :lg="12"
-            :xl="8"
+                :xs="0"
+                :sm="12"
+                :md="12"
+                :lg="12"
+                :xl="8"
         >
             <a-card class="left-card" :bordered="false">
                 <div class="welcome">
@@ -22,20 +22,20 @@
             </a-card>
         </a-col>
         <a-col
-            :xs="24"
-            :sm="12"
-            :md="9"
-            :lg="8"
-            :xl="8"
+                :xs="24"
+                :sm="12"
+                :md="9"
+                :lg="8"
+                :xl="8"
         >
             <std-form-card-content :options="options" :error="error" @onSubmit="handleSubmit"/>
             <vue-particles
-                color="#dedede"
-                :particlesNumber="60"
-                :move-speed="3"
-                :click-effect="false"
-                :hover-effect="false"
-                class="particles"/>
+                    color="#dedede"
+                    :particlesNumber="60"
+                    :move-speed="3"
+                    :click-effect="false"
+                    :hover-effect="false"
+                    class="particles"/>
         </a-col>
     </a-row>
 </template>
