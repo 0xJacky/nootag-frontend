@@ -31,41 +31,41 @@
             </div>
         </a-col>
         <a-divider/>
-        <a-row class="center news">
-            <a-col :xs="22" :sm="18">
-                <div class="news-label">
-                    <span class="left">最新动态</span>
-                    <a class="right" @click="getMoreNews">更多新闻</a>
-                </div>
-                    <a-col :xs="24" :sm="12">
-                        <span style="cursor: pointer"
-                              @click="$router.push('/post/'+(headline.post_name?headline.post_name:headline.id)).then()">
-                            <div class="headline">
-                                <div class="img-container">
-                                    <img class="image" :src="headline.banner"/>
-                                </div>
-                                <div class="meta">
-                                    <h2>{{ headline.title }}</h2>
-                                    <p>{{ headline.created_at }}</p>
-                                </div>
-                            </div>
-                        </span>
-                    </a-col>
-                    <a-col :xs="12">
-                        <a-col :xs="10" :sm="10" :md="11" class="post" v-for="post in posts" :key="post.id">
-                        <span style="cursor: pointer"
-                              @click="$router.push('/post/'+(post.post_name?post.post_name:post.id)).then()">
-                            <div class="img-container">
-                                <img class="image" :src="post.banner"/>
-                            </div>
-                            <div class="meta">
-                                {{ post.title }}
-                            </div>
-                        </span>
-                        </a-col>
-                    </a-col>
-            </a-col>
-        </a-row>
+        <!--<a-row class="center news">-->
+            <!--<a-col :xs="22" :sm="18">-->
+                <!--<div class="news-label">-->
+                    <!--<span class="left">最新动态</span>-->
+                    <!--<a class="right" @click="getMoreNews">更多新闻</a>-->
+                <!--</div>-->
+                    <!--<a-col :xs="24" :sm="12">-->
+                        <!--<span style="cursor: pointer"-->
+                              <!--@click="$router.push('/post/'+(headline.post_name?headline.post_name:headline.id)).then()">-->
+                            <!--<div class="headline">-->
+                                <!--<div class="img-container">-->
+                                    <!--<img class="image" :src="headline.banner"/>-->
+                                <!--</div>-->
+                                <!--<div class="meta">-->
+                                    <!--<h2>{{ headline.title }}</h2>-->
+                                    <!--<p>{{ headline.created_at }}</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</span>-->
+                    <!--</a-col>-->
+                    <!--<a-col :xs="12">-->
+                        <!--<a-col :xs="10" :sm="10" :md="11" class="post" v-for="post in posts" :key="post.id">-->
+                        <!--<span style="cursor: pointer"-->
+                              <!--@click="$router.push('/post/'+(post.post_name?post.post_name:post.id)).then()">-->
+                            <!--<div class="img-container">-->
+                                <!--<img class="image" :src="post.banner"/>-->
+                            <!--</div>-->
+                            <!--<div class="meta">-->
+                                <!--{{ post.title }}-->
+                            <!--</div>-->
+                        <!--</span>-->
+                        <!--</a-col>-->
+                    <!--</a-col>-->
+            <!--</a-col>-->
+        <!--</a-row>-->
         <a-row class="center news">
             <a-col :xs="22" :sm="18">
                 <h2>我们的想法</h2>
@@ -87,7 +87,7 @@
         </a-row>
         <div class="product_body">
             <h2 style="text-align: center; padding: 30px 0 50px 0">无派科技出品</h2>
-            <a-row :gutter="[16,8]" type="flex" justify="center">
+            <a-row :gutter="[16,8]" type="flex" justify="center" style="margin: 0px 0px;" >
                 <a-col v-for="product in products" :key="product.name">
                     <product-card :card="product"/>
                 </a-col>
