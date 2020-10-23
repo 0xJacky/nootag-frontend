@@ -114,7 +114,8 @@
                 '\n' +
                 '2017 年上线至今，聚集了数千万计的尝鲜派来这里体验测试版的 iOS 系统，并通过微博和 iOS 体验报告解决了「什么时候更新？」「去哪更新？」「更新了什么？」这三个问题，' +
                 '而有了来自全世界各地的捐助以及志愿者的帮助，也让尝鲜派在初期发展地更好，' +
-                '并将持续致力于为所有尝鲜派们打造一个更加优质、完善的尝鲜环境和服务。'
+                '并将持续致力于为所有尝鲜派们打造一个更加优质、完善的尝鲜环境和服务。',
+        privacy_url: 'http://nootag.tech/#/privacy_of_ibeta'
     }, {
         icon: require('@/assets/img/pasty_icon.png'),
         name: 'Pasty 啪唧相机',
@@ -127,7 +128,8 @@
                 '\n' +
                 '能表达这种对文化、品牌的认同是 Pasty 之所以区别于其他水印软件的核心区别。\n' +
                 '\n' +
-                '上线虽然只有短暂的几个月，但如今已服务数百万人。'
+                '上线虽然只有短暂的几个月，但如今已服务数百万人。',
+        privacy_url: 'http://nootag.tech/#/privacy_of_pasty'
     }]
     import ProductCard from "~/surface/components/ProductCard";
 

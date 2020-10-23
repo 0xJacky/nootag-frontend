@@ -12,7 +12,8 @@
                 <div class="action">
                     <span v-if="card.appType==='website'"><a :href="card.url"><a-icon type="global" /></a></span>
                     <span @click="try_visible=true" v-else-if="card.appType==='app'"><a-icon type="wechat"/></span>
-                    <span @click="visible=true"><a-icon type="info-circle"/></span>
+                    <span><a-icon type="info-circle" @click="visible=true"/></span>
+                    <span><a :href="card.privacy_url"><a-icon type="container" @click="visible=true"/></a></span>
                 </div>
             </div>
         </a-card>

@@ -17,6 +17,16 @@ const router = new Router({
                     name: '首页'
                 },
                 {
+                    path: '/privacy_of_pasty',
+                    component: () => import('./views/other/Privacy_of_Pasty'),
+                    name: 'Pasty 啪唧相机隐私声明'
+                },
+                {
+                    path: '/privacy_of_ibeta',
+                    component: () => import('./views/other/Privacy_of_iBeta'),
+                    name: 'iBeta 尝鲜派隐私声明'
+                },
+                {
                     path: '/post/:search',
                     component: () => import('./views/other/Post'),
                     name: '文章'
